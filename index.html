@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Little Princess</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="sparkles"></div>
+    <div class="floating-hearts"></div>
+    <div class="container">
+        <div class="main-card">
+            <div class="ribbon-container">
+                <div class="ribbon">It's a Girl!</div>
+            </div>
+            <div class="card-header">
+                <div class="header-decorations">
+                    <span class="decoration-item"><i class="fas fa-star"></i></span>
+                    <span class="decoration-item"><i class="fas fa-heart"></i></span>
+                    <span class="decoration-item"><i class="fas fa-star"></i></span>
+                </div>
+                <h1 class="title">Welcome to the World</h1>
+                <p class="subtitle">Our Precious Little Princess</p>
+                <div class="header-decorations">
+                    <span class="decoration-item"><i class="fas fa-star"></i></span>
+                    <span class="decoration-item"><i class="fas fa-heart"></i></span>
+                    <span class="decoration-item"><i class="fas fa-star"></i></span>
+                </div>
+            </div>
+            
+            <div class="baby-portrait">
+                <div class="portrait-frame">
+                    <img src="images/baby4.jpg" alt="Baby Portrait" onerror="this.src='https://via.placeholder.com/300x300?text=Baby+Photo'">
+                </div>
+            </div>
+            
+            <div class="summary-content">
+                <!-- <div class="baby-icon">
+                    <i class="fas fa-baby"></i>
+                </div> -->
+                <div class="birth-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Born on:</span>
+                        <span class="detail-value">March 15, 2024</span>
+                    </div>
+                    <!-- <div class="detail-item">
+                        <span class="detail-label">Time:</span>
+                        <span class="detail-value">2:30 PM</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Weight:</span>
+                        <span class="detail-value">3.2 kg</span>
+                    </div> -->
+                </div>
+            </div>
+<!-- 
+            <div class="celebration-quote">
+                <blockquote>
+                    "A baby is a little bit of heaven sent down to earth."
+                </blockquote>
+            </div> -->
+            <div class="nav-buttons">
+                <a href="gallery.html" class="nav-button gallery-btn">
+                    <i class="fas fa-images"></i>
+                    <span>View Gallery</span>
+                </a>
+                <a href="wishes.html" class="nav-button wishes-btn">
+                    <i class="fas fa-heart"></i>
+                    <span>Read Wishes</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Full View -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modalImage" src="" alt="Full View">
+            <div class="modal-caption">
+                <h3 id="modalTitle"></h3>
+                <p id="modalDescription"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 

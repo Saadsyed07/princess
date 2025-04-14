@@ -1,0 +1,1942 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #ff69b4;
+    --secondary-color: #ffb6c1;
+    --accent-color: #ff1493;
+    --text-color: #333;
+    --light-pink: #fff0f5;
+    --gradient-start: #ff69b4;
+    --gradient-end: #ffb6c1;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, var(--light-pink), #fff);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Stars Background */
+.stars, .twinkling {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: -1;
+}
+
+.stars {
+    background: #000 url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+    animation: moveStars 200s linear infinite;
+}
+
+.twinkling {
+    background: transparent url('https://www.transparenttextures.com/patterns/twinkle.png') repeat;
+    animation: moveTwinkling 100s linear infinite;
+}
+
+/* Sections */
+.section {
+    min-height: 100vh;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Welcome Section */
+.welcome-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.welcome-header {
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle {
+    font-family: 'Dancing Script', cursive;
+    font-size: 5rem;
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Improved Main Page Layout */
+.summary-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.1);
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.baby-icon {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+    animation: pulse 2s infinite;
+}
+
+.baby-icon i {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.birth-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.detail-item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: var(--accent-color);
+    font-size: 1.1rem;
+}
+
+.detail-value {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* Blessings Section */
+.blessings {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 3rem 0;
+    flex-wrap: wrap;
+}
+
+.blessing-card {
+    background: var(--accent-color);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 300px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.blessing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.blessing-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.blessing-card p {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+    line-height: 1.5;
+}
+
+/* Gallery Section */
+.gallery-section {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.photo-wrapper {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.photo-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.photo-card:hover .photo-wrapper img {
+    transform: scale(1.1);
+}
+
+.photo-card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.photo-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(255, 105, 180, 0.3);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.photo-card:hover img {
+    transform: scale(1.1);
+}
+
+.photo-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    padding: 2rem;
+    transform: translateY(100%);
+    transition: transform 0.5s ease;
+}
+
+.photo-card:hover .photo-overlay {
+    transform: translateY(0);
+}
+
+.photo-label {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.photo-description {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Wishes Section */
+.wishes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.wish-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.wish-card:hover {
+    transform: translateY(-10px);
+}
+
+.wish-text {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.wish-author {
+    text-align: right;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.add-wish {
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 600px;
+}
+
+.add-wish textarea,
+.add-wish input {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    font-family: inherit;
+}
+
+.submit-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes moveStars {
+    from { background-position: 0 0; }
+    to { background-position: -10000px 5000px; }
+}
+
+@keyframes moveTwinkling {
+    from { background-position: 0 0; }
+    to { background-position: -10000px 5000px; }
+}
+
+@keyframes fadeInDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Floating Hearts */
+.floating-hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color);
+    transform: rotate(45deg);
+    animation: floatHeart 15s linear infinite;
+}
+
+.heart:before,
+.heart:after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart:before {
+    left: -10px;
+}
+
+.heart:after {
+    top: -10px;
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: rotate(45deg) translateY(100vh) scale(0);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(45deg) translateY(-100px) scale(1);
+        opacity: 0;
+    }
+}
+
+/* Navigation Cards */
+.navigation-section {
+    padding: 2rem;
+}
+
+.navigation-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.nav-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 200px;
+}
+
+.nav-card:hover {
+    transform: translateY(-10px);
+    background: var(--accent-color);
+}
+
+.nav-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.nav-card h3 {
+    font-family: 'Dancing Script', cursive;
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+}
+
+/* Back Button */
+.back-button {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    z-index: 100;
+}
+
+.back-button a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.back-button a:hover {
+    transform: translateX(-5px);
+    background: var(--secondary-color);
+}
+
+.back-button i {
+    font-size: 1.2rem;
+}
+
+/* Section Visibility */
+.hidden {
+    display: none;
+}
+
+/* Adjust Wishes Container */
+.wishes-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Main Card */
+.main-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    position: relative;
+    z-index: 2;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 105, 180, 0.1);
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-header {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-header::before {
+    display: none;
+}
+
+.card-header .title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.card-header .subtitle {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    opacity: 0.9;
+}
+
+.card-content {
+    padding: 2rem;
+}
+
+/* Summary Section */
+.summary-section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    background: var(--accent-color);
+    border-radius: 20px;
+    margin-bottom: 2rem;
+}
+
+.summary-icon {
+    background: white;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.summary-icon i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.summary-details h3 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.summary-details p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin: 0.3rem 0;
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.nav-button {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.nav-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
+}
+
+/* Page-specific styles */
+.welcome-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.photo-gallery {
+    min-height: 100vh;
+    padding: 6rem 2rem 2rem;
+}
+
+.wishes-section {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.letter-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 105, 180, 0.1);
+    animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.letter {
+    background: linear-gradient(to right, #fff, var(--light-pink));
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.letter::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="%23ff69b4" stroke-width="1" stroke-dasharray="5,5"/></svg>');
+    opacity: 0.1;
+    animation: rotate 20s linear infinite;
+}
+
+.letter-greeting {
+    font-family: 'Great Vibes', cursive;
+    color: var(--accent-color);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+}
+
+.letter-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-left: 1rem;
+    border-left: 3px solid var(--primary-color);
+    animation: fadeIn 1s ease-out 0.3s backwards;
+}
+
+.letter-closing-container {
+    text-align: right;
+    margin-top: 2rem;
+    animation: fadeIn 1s ease-out 0.6s backwards;
+}
+
+.letter-signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-top: 1rem;
+}
+
+/* Improved Wishes Page Layout */
+.wishes-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.wishes-section {
+    padding: 2rem 1rem;
+}
+
+.letter-container {
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.letter {
+    padding: 2rem 1.5rem;
+}
+
+.letter-greeting {
+    margin-bottom: 1.5rem;
+}
+
+.letter-text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.letter-text {
+    padding-left: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.letter-closing-container {
+    margin-top: 2.5rem;
+    text-align: right;
+}
+
+.letter-closing {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.letter-signature {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.2rem;
+    color: var(--accent-color);
+}
+
+/* Navigation Buttons Enhancement */
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.nav-button {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.nav-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
+}
+
+/* Back Button Enhancement */
+.back-button {
+    margin-bottom: 2rem;
+}
+
+.back-button a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    background: rgba(255, 105, 180, 0.1);
+}
+
+.back-button a:hover {
+    background: rgba(255, 105, 180, 0.2);
+    transform: translateX(-5px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* General mobile improvements */
+    body {
+        background: linear-gradient(145deg, var(--light-pink), #fff);
+    }
+    
+    .container {
+        padding: 0;
+    }
+    
+    /* Make cards fit better on mobile */
+    .main-card, .wishes-section, .letter-container {
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(255, 105, 180, 0.3);
+    }
+    
+    /* Header improvements for mobile */
+    .card-header {
+        padding: 1.5rem 1rem;
+        border-radius: 10px;
+        margin-bottom: 1.5rem;
+    }
+    
+    .card-header .title {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+    
+    .card-header .subtitle {
+        font-size: 1.8rem;
+    }
+    
+    /* Photo gallery mobile improvements */
+    .photo-gallery {
+        padding: 0 0 2rem;
+    }
+    
+    .photo-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+    
+    .photo-card {
+        margin-bottom: 0;
+        transform: none !important;
+        box-shadow: 0 8px 25px rgba(255, 105, 180, 0.2);
+    }
+    
+    .photo-wrapper {
+        height: auto;
+        max-height: 350px;
+    }
+    
+    .photo-overlay {
+        position: relative;
+        transform: translateY(0);
+        background: white;
+        color: var(--text-color);
+        padding: 1rem;
+        border-radius: 0 0 15px 15px;
+        border-top: 3px solid var(--primary-color);
+    }
+    
+    .photo-label {
+        color: var(--accent-color);
+        font-size: 1.8rem;
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+    
+    .photo-description {
+        color: var(--text-color);
+        text-align: center;
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+        margin: 1rem 0 1.5rem;
+        text-align: center;
+        color: var(--accent-color);
+    }
+    
+    .back-button {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: 1rem;
+    }
+}
+
+/* Celebration Particles */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: fall 8s linear infinite;
+    transform: translateY(-100vh);
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(100vh) translateX(100px);
+        opacity: 0;
+    }
+}
+
+/* Ensure content stays above particles */
+.main-card, .wishes-section, .gallery-section {
+    position: relative;
+    z-index: 2;
+}
+
+/* Fullscreen Modal for Gallery */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    transform: scale(0.95);
+    animation: scaleIn 0.3s forwards;
+}
+
+@keyframes scaleIn {
+    to {
+        transform: scale(1);
+    }
+}
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.modal-caption {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: white;
+    padding: 15px 20px;
+    border-radius: 0 0 10px 10px;
+    margin-top: -5px;
+    text-align: center;
+}
+
+.modal-caption h3 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.modal-caption p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+    transition: transform 0.3s ease;
+}
+
+.close:hover {
+    transform: rotate(90deg);
+}
+
+/* Mobile-specific Adjustments */
+@media (max-width: 768px) {
+    .modal-content {
+        max-width: 95%;
+    }
+    
+    .modal-content img {
+        max-height: 60vh;
+    }
+    
+    .modal-caption {
+        padding: 10px;
+    }
+    
+    .modal-caption h3 {
+        font-size: 1.8rem;
+    }
+    
+    .modal-caption p {
+        font-size: 0.9rem;
+    }
+    
+    .close {
+        top: -30px;
+        right: 0;
+        font-size: 30px;
+    }
+}
+
+/* Enhanced Animations and Effects */
+.photo-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 60%, rgba(255, 105, 180, 0.2));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.photo-card:hover .photo-wrapper::after {
+    opacity: 1;
+}
+
+/* Enhanced Full Screen Modal */
+.modal.show {
+    animation: fadeInBlur 0.3s forwards;
+}
+
+@keyframes fadeInBlur {
+    from {
+        opacity: 0;
+        backdrop-filter: blur(0);
+    }
+    to {
+        opacity: 1;
+        backdrop-filter: blur(5px);
+    }
+}
+
+.modal-content {
+    transform: scale(0.9) translateY(20px);
+    transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.modal.show .modal-content {
+    transform: scale(1) translateY(0);
+}
+
+.modal-content img {
+    border-radius: 10px 10px 0 0;
+    transition: transform 0.5s ease;
+}
+
+.modal-caption {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    padding: 15px 20px;
+    border-radius: 0 0 10px 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.modal-caption::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="none" stroke="white" stroke-width="0.5" stroke-opacity="0.2"/></svg>');
+    opacity: 0.2;
+    z-index: -1;
+}
+
+/* Touch-specific styles for mobile */
+@media (hover: none) {
+    .photo-overlay {
+        transform: translateY(0);
+        height: auto;
+        max-height: 40%;
+        bottom: 0;
+    }
+    
+    .photo-card:active {
+        transform: scale(0.98);
+    }
+}
+
+/* Mobile Notice */
+.mobile-notice {
+    background: rgba(255, 105, 180, 0.1);
+    border-radius: 10px;
+    padding: 0.8rem 1rem;
+    margin: 0 1rem 1.5rem;
+    text-align: center;
+    display: none;
+}
+
+.mobile-notice p {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.mobile-notice i {
+    font-size: 1.1rem;
+}
+
+/* Expand Icon for Photos */
+.photo-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.3s ease;
+    z-index: 5;
+}
+
+.photo-icon i {
+    color: var(--accent-color);
+    font-size: 1rem;
+}
+
+.photo-card:hover .photo-icon {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Heartbeat animation for modal images */
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    5% {
+        transform: scale(1.05);
+    }
+    10% {
+        transform: scale(1);
+    }
+    15% {
+        transform: scale(1.05);
+    }
+    20% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.modal-content img:hover {
+    animation: heartbeat 2s ease-in-out;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    .mobile-notice {
+        display: block;
+    }
+    
+    .photo-icon {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+    
+    /* Better transitions on mobile */
+    .photo-card {
+        transition: transform 0.2s ease;
+    }
+    
+    .photo-card:active {
+        transform: scale(0.97);
+    }
+    
+    .modal-content {
+        margin: 0 0.5rem;
+        max-width: calc(100% - 1rem);
+        transition: transform 0.25s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    }
+}
+
+/* Loading Indicator */
+.loading-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--accent-color);
+    font-size: 2rem;
+    z-index: 5;
+    background: rgba(255, 255, 255, 0.7);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+.photo-wrapper img {
+    transition: opacity 0.3s ease;
+}
+
+.modal-content img {
+    transition: opacity 0.3s ease, transform 0.5s ease;
+}
+
+/* Better Mobile Styling */
+@media (max-width: 768px) {
+    /* Improved main page for mobile */
+    .main-card {
+        margin: 1rem;
+        padding: 1.2rem;
+        border-radius: 15px;
+    }
+    
+    .card-header {
+        padding: 1.5rem 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .card-header .title {
+        font-size: 2.2rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .card-header .subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .summary-content {
+        flex-direction: column;
+        padding: 1.2rem;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .baby-icon {
+        margin: 0 auto;
+    }
+    
+    .birth-details {
+        width: 100%;
+    }
+    
+    .detail-item {
+        justify-content: space-between;
+        border-bottom: 1px dashed rgba(255, 105, 180, 0.2);
+        padding-bottom: 0.8rem;
+    }
+    
+    .detail-item:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-button {
+        width: 100%;
+        justify-content: center;
+        padding: 0.9rem 1rem;
+    }
+    
+    /* Improved wishes page for mobile */
+    .wishes-section {
+        padding: 1rem;
+    }
+    
+    .letter-container {
+        padding: 1rem;
+    }
+    
+    .letter {
+        padding: 1.5rem 1rem;
+    }
+    
+    .letter-greeting {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .letter-text {
+        font-size: 1rem;
+        padding-left: 0.8rem;
+    }
+    
+    .letter-text-container {
+        gap: 1rem;
+    }
+    
+    .letter-closing-container {
+        margin-top: 2rem;
+    }
+    
+    .letter-closing {
+        font-size: 1.1rem;
+    }
+    
+    .letter-signature {
+        font-size: 1.8rem;
+    }
+    
+    .back-button {
+        margin: 1rem 0;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Enhanced Main Page Styles */
+.sparkles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M50 40 L52 50 L62 52 L52 54 L50 64 L48 54 L38 52 L48 50 Z" fill="%23ffb6c1" stroke="none" opacity="0.6" /></svg>') repeat;
+    animation: floatBg 60s linear infinite;
+}
+
+@keyframes floatBg {
+    from { background-position: 0 0; }
+    to { background-position: 1000px 1000px; }
+}
+
+.floating-hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.7;
+}
+
+.main-card {
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(255, 105, 180, 0.3);
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    position: relative;
+    z-index: 2;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transform: translateY(30px);
+    opacity: 0;
+    animation: fadeInUp 1.2s forwards 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    overflow: visible;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ribbon */
+.ribbon-container {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    overflow: visible;
+    z-index: 100;
+}
+
+.ribbon {
+    background: linear-gradient(135deg, #ff69b4, #ff1493);
+    color: white;
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.2rem;
+    padding: 0.6rem 1.5rem;
+    position: relative;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    transform: rotate(45deg);
+    animation: pulse 3s infinite;
+}
+
+.card-header {
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(255, 105, 180, 0.3);
+}
+
+.card-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><circle cx="20" cy="20" r="1" fill="%23ffffff" opacity="0.3"/></svg>') repeat;
+    animation: slideBackground 40s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes slideBackground {
+    from { background-position: 0 0; }
+    to { background-position: 1000px 1000px; }
+}
+
+.header-decorations {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 0.8rem 0;
+}
+
+.decoration-item {
+    font-size: 1.5rem;
+    color: white;
+    animation: twinkle 3s infinite;
+    opacity: 0.8;
+}
+
+.decoration-item:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.decoration-item:nth-child(3) {
+    animation-delay: 1s;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+.card-header .title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.8rem;
+    color: white;
+    margin-bottom: 0.8rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    animation: glow 3s infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 25px rgba(255, 255, 255, 0.5);
+    }
+}
+
+.card-header .subtitle {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: white;
+    opacity: 0.9;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Baby Portrait */
+.baby-portrait {
+    margin: 2rem auto;
+    text-align: center;
+    max-width: 300px;
+}
+
+.portrait-frame {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(255, 105, 180, 0.4);
+    border: 8px solid white;
+    animation: float 6s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.portrait-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.portrait-frame:hover img {
+    transform: scale(1.05);
+}
+
+.portrait-frame::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 30%, transparent 0%, rgba(255, 255, 255, 0.2) 10%, transparent 60%);
+    pointer-events: none;
+}
+
+/* Birth Details */
+.summary-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(255, 105, 180, 0.15);
+    margin: 0 auto 2rem;
+    max-width: 90%;
+    position: relative;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeIn 0.8s forwards 0.6s;
+}
+
+.baby-icon {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(255, 105, 180, 0.3);
+    animation: pulse 3s infinite;
+    position: relative;
+}
+
+.baby-icon::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 50%;
+    border: 2px dashed rgba(255, 255, 255, 0.5);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.baby-icon i {
+    font-size: 3rem;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.birth-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.detail-item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+    transform: translateX(20px);
+    opacity: 0;
+    animation: slideIn 0.5s forwards;
+}
+
+.detail-item:nth-child(1) { animation-delay: 0.8s; }
+.detail-item:nth-child(2) { animation-delay: 1s; }
+.detail-item:nth-child(3) { animation-delay: 1.2s; }
+
+@keyframes slideIn {
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.detail-label {
+    font-weight: 600;
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+.detail-value {
+    font-size: 1.3rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* Quote */
+.celebration-quote {
+    margin: 2rem auto;
+    text-align: center;
+    max-width: 600px;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: scaleIn 0.8s forwards 1.4s;
+}
+
+.celebration-quote blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--accent-color);
+    font-style: italic;
+    position: relative;
+    padding: 0 2rem;
+}
+
+.celebration-quote blockquote::before,
+.celebration-quote blockquote::after {
+    content: '"';
+    font-family: 'Georgia', serif;
+    font-size: 3rem;
+    color: rgba(255, 105, 180, 0.3);
+    position: absolute;
+    line-height: 0;
+}
+
+.celebration-quote blockquote::before {
+    left: 0;
+    top: 1rem;
+}
+
+.celebration-quote blockquote::after {
+    right: 0;
+    bottom: 0;
+    transform: rotate(180deg);
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s forwards 1.6s;
+}
+
+.nav-button {
+    position: relative;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.gallery-btn {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+    box-shadow: 0 10px 20px rgba(0, 114, 255, 0.3);
+}
+
+.wishes-btn {
+    background: linear-gradient(135deg, #ff6a88, #ff99ac);
+    color: white;
+    box-shadow: 0 10px 20px rgba(255, 106, 136, 0.3);
+}
+
+.nav-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+    z-index: -1;
+}
+
+.nav-button:hover::before {
+    transform: translateX(0);
+}
+
+.nav-button:hover {
+    transform: translateY(-5px);
+}
+
+.nav-button i {
+    font-size: 1.3rem;
+}
+
+/* Media Queries for Main Page */
+@media (max-width: 768px) {
+    .main-card {
+        margin: 1.5rem;
+        padding: 1.5rem;
+    }
+    
+    .ribbon {
+        font-size: 1rem;
+        padding: 0.5rem 1.2rem;
+    }
+    
+    .card-header {
+        padding: 1.5rem 1rem;
+    }
+    
+    .card-header .title {
+        font-size: 2.8rem;
+    }
+    
+    .card-header .subtitle {
+        font-size: 1.8rem;
+    }
+    
+    .header-decorations {
+        gap: 1rem;
+    }
+    
+    .decoration-item {
+        font-size: 1.2rem;
+    }
+    
+    .portrait-frame {
+        height: 250px;
+        border-width: 6px;
+    }
+    
+    .summary-content {
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+    
+    .baby-icon {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .baby-icon i {
+        font-size: 2.5rem;
+    }
+    
+    .detail-item {
+        justify-content: space-between;
+        border-bottom: 1px dashed rgba(255, 105, 180, 0.2);
+        padding-bottom: 0.8rem;
+    }
+    
+    .detail-item:last-child {
+        border-bottom: none;
+    }
+    
+    .celebration-quote blockquote {
+        font-size: 1.3rem;
+        padding: 0 1.5rem;
+    }
+    
+    .nav-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-button {
+        width: 100%;
+        justify-content: center;
+        padding: 1rem 2rem;
+    }
+} 
+
+.baby-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(255, 105, 180, 0.3);
+    /* border: 8px solid white; */
+    top: 10px;
+}
