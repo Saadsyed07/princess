@@ -60,7 +60,7 @@ body {
 .section-title {
     font-family: 'Dancing Script', cursive;
     font-size: 3rem;
-    color: var(--secondary-color);
+    color: var(--secondary-color)#333;
     margin-bottom: 2rem;
     text-align: center;
 }
@@ -80,7 +80,7 @@ body {
 .title {
     font-family: 'Playfair Display', serif;
     font-size: 4rem;
-    color: var(--primary-color);
+    color: #333;
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -91,6 +91,7 @@ body {
     color: var(--secondary-color);
     margin-bottom: 2rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    /* color: #000; */
 }
 
 /* Improved Main Page Layout */
@@ -1553,15 +1554,20 @@ body {
     margin: 0.8rem 0;
 }
 
+.header-decorations h1{
+    color: #333;
+}
+
 .decoration-item {
     font-size: 1.5rem;
-    color: white;
+    color:  #0072ff;
     animation: twinkle 3s infinite;
     opacity: 0.8;
 }
 
 .decoration-item:nth-child(2) {
     animation-delay: 0.5s;
+    color: red;
 }
 
 .decoration-item:nth-child(3) {
@@ -1582,7 +1588,7 @@ body {
 .card-header .title {
     font-family: 'Great Vibes', cursive;
     font-size: 3.8rem;
-    color: white;
+    color: #ff1493;
     margin-bottom: 0.8rem;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
     animation: glow 3s infinite;
@@ -1600,7 +1606,7 @@ body {
 .card-header .subtitle {
     font-family: 'Dancing Script', cursive;
     font-size: 2.5rem;
-    color: white;
+    color: black;
     opacity: 0.9;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
 }
